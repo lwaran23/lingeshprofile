@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lingeshwaran K - Professional Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif; /* Assuming Inter is a common, clean font; Tailwind uses a system font stack by default */
+        }
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Active nav link style */
+        .nav-link.active {
+            color: #4f46e5; /* indigo-600 */
+            font-weight: 600;
+            border-bottom: 2px solid #4f46e5;
+        }
+        .section-title {
+            border-bottom: 2px solid #6366f1; /* indigo-500 */
+            padding-bottom: 0.5rem;
+        }
+        .skill-tag {
+            transition: all 0.2s ease-in-out;
+        }
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 2.5rem; /* Space for the timeline line and dot */
+            padding-bottom: 1.5rem;
+        }
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0.625rem; /* Centered on the 0.75rem dot */
+            top: 0.25rem;
+            bottom: -0.25rem; /* Extend line slightly below last item's text if not last-child */
+            width: 2px;
+            background-color: #cbd5e1; /* slate-300 */
+        }
+        .timeline-item:last-child::before {
+            bottom: calc(100% - 0.75rem - 0.25rem); /* Stop line at the dot for the last item */
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 0.25rem;
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 50%;
+            background-color: #4f46e5; /* indigo-600 */
+            border: 2px solid #e2e8f0; /* slate-200 */
+        }
+        /* For smaller screens, adjust nav padding */
+        @media (max-width: 768px) {
+            header nav ul li a {
+                padding: 0.5rem 0.75rem;
+            }
+            .contact-info span {
+                display: block;
+                margin-bottom: 0.25rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700 leading-relaxed">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-2xl font-bold text-indigo-600">Lingeshwaran K</h1>
+                </div>
+                <nav class="hidden md:block">
+                    <ul class="flex items-center space-x-4">
+                        <li><a href="#summary" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-indigo-600 hover:bg-indigo-50">Summary</a></li>
+                        <li><a href="#skills" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-indigo-600 hover:bg-indigo-50">Skills</a></li>
+                        <li><a href="#experience" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-indigo-600 hover:bg-indigo-50">Experience</a></li>
+                        <li><a href="#projects" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-indigo-600 hover:bg-indigo-50">Projects</a></li>
+                        <li><a href="#education" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-indigo-600 hover:bg-indigo-50">Education</a></li>
+                        <li><a href="#contact" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-indigo-600 hover:bg-indigo-50">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-600 hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                        <span class="sr-only">Open main menu</span>
+                        &#9776; </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <ul class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <li><a href="#summary" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-indigo-600 hover:bg-indigo-50">Summary</a></li>
+                <li><a href="#skills" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-indigo-600 hover:bg-indigo-50">Skills</a></li>
+                <li><a href="#experience" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-indigo-600 hover:bg-indigo-50">Experience</a></li>
+                <li><a href="#projects" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-indigo-600 hover:bg-indigo-50">Projects</a></li>
+                <li><a href="#education" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-indigo-600 hover:bg-indigo-50">Education</a></li>
+                <li><a href="#contact" class="block nav-link px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-indigo-600 hover:bg-indigo-50">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <p class="text-center text-lg text-slate-600 mb-12">Welcome to the interactive professional profile of Lingeshwaran K. This page highlights his skills, experience, and accomplishments. Use the navigation above to explore different sections.</p>
+
+        <section id="summary" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-semibold text-slate-800 mb-6 section-title">Summary</h2>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <p class="text-slate-600">Proficient Mechanical and System Engineer with 11 years of experience, including six years in System Engineering, V&V, R&D, and Project Management for medical device sustenance products. Complemented by four years in Automotive Product Design & Development. Demonstrates full product lifecycle understanding, from concept to release, ensuring compliance with ISO 13485, ISO 14971, FDA regulations (21 CFR Part 820), and EU MDR. Expertise in DHF management, CAPA, DFMEA, and risk management. A results-oriented leader fostering cross-functional collaboration for project success and quality improvement.</p>
+            </div>
+        </section>
+
+        <section id="skills" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-semibold text-slate-800 mb-8 section-title">Skills</h2>
+            <p class="text-slate-600 mb-6">This section outlines key technical and professional competencies. Skills are grouped by area of expertise for clarity.</p>
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-indigo-700 mb-3">Systems Engineering</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm">System Architecture</span>
+                        <span class="skill-tag bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm">Requirements Management (Definition, Decomposition, Traceability)</span>
+                        <span class="skill-tag bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm">System Integration</span>
+                        <span class="skill-tag bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm">V&V Strategy & Execution</span>
+                        <span class="skill-tag bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm">DV/DV</span>
+                        <span class="skill-tag bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm">System Modeling Concepts</span>
+                        <span class="skill-tag bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm">Technical Documentation (PRD, SRD, ERD, CSS, OIS)</span>
+                        <span class="skill-tag bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm">Interface Definitions</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-indigo-700 mb-3">Medical Devices & Regulatory Compliance</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-sm">ISO 13485</span>
+                        <span class="skill-tag bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-sm">ISO 14971</span>
+                        <span class="skill-tag bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-sm">FDA QSR (21 CFR Part 820)</span>
+                        <span class="skill-tag bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-sm">EU MDR</span>
+                        <span class="skill-tag bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-sm">IEC 60601</span>
+                        <span class="skill-tag bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-sm">IEC 62304 (principles)</span>
+                        <span class="skill-tag bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-sm">DHF Management & Remediation</span>
+                        <span class="skill-tag bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-sm">CAPA</span>
+                        <span class="skill-tag bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-sm">GSPR (Annex I MDR)</span>
+                        <span class="skill-tag bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-sm">Usability Engineering (IEC 62366 concepts)</span>
+                        <span class="skill-tag bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-sm">GMP principles</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-indigo-700 mb-3">Design & Development</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-sm">NPD Processes</span>
+                        <span class="skill-tag bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-sm">Sustenance Engineering</span>
+                        <span class="skill-tag bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-sm">Reverse Engineering</span>
+                        <span class="skill-tag bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-sm">Mechanical Design</span>
+                        <span class="skill-tag bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-sm">DFMEA</span>
+                        <span class="skill-tag bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-sm">Design Controls</span>
+                        <span class="skill-tag bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-sm">Test Protocol Development & Execution</span>
+                        <span class="skill-tag bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-sm">GD&T Drawings</span>
+                        <span class="skill-tag bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-sm">DFM</span>
+                        <span class="skill-tag bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-sm">DFR</span>
+                        <span class="skill-tag bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-sm">DVPR</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-indigo-700 mb-3">Software & Tools</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">Creo Parametric 2.0</span>
+                        <span class="skill-tag bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">SolidWorks</span>
+                        <span class="skill-tag bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">SAP PLM (ECM/ECR/ECO)</span>
+                        <span class="skill-tag bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">Evolve SharePoint</span>
+                        <span class="skill-tag bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm italic">Familiar with statistical software & requirements management systems (e.g., DOORS, JAMA concepts)</span>
+                    </div>
+                </div>
+                 <div>
+                    <h3 class="text-xl font-semibold text-indigo-700 mb-3">Project Management</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm">Project Execution & Leadership (Sustenance)</span>
+                        <span class="skill-tag bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm">Stakeholder Management</span>
+                        <span class="skill-tag bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm">Cross-functional Team Collaboration</span>
+                        <span class="skill-tag bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm">Engineering Change Coordination</span>
+                        <span class="skill-tag bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm">Risk Management</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-indigo-700 mb-3">Quality Management</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag bg-lime-100 text-lime-700 px-3 py-1 rounded-full text-sm">QSR understanding</span>
+                        <span class="skill-tag bg-lime-100 text-lime-700 px-3 py-1 rounded-full text-sm">Manufacturability/Serviceability/Testability/Reliability Assessment</span>
+                        <span class="skill-tag bg-lime-100 text-lime-700 px-3 py-1 rounded-full text-sm">Technical File Compilation</span>
+                        <span class="skill-tag bg-lime-100 text-lime-700 px-3 py-1 rounded-full text-sm">Complaint Analysis Support</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-semibold text-slate-800 mb-8 section-title">Professional Experience</h2>
+            <p class="text-slate-600 mb-6">Details of past roles, responsibilities, and contributions in chronological order.</p>
+            <div class="space-y-8">
+                <article class="bg-white p-6 rounded-lg shadow">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-xl font-semibold text-indigo-700 mb-1">Professional II - Mechanical System and V&V Engineer</h3>
+                        <p class="text-md text-slate-500 mb-1">Capgemini Tech Ltd. (Client: Philips Health Care) | Coimbatore, INDIA</p>
+                        <p class="text-sm text-slate-400 mb-3">Jul 2022 – Present</p>
+                        <ul class="list-disc list-outside ml-5 space-y-1 text-slate-600 text-sm">
+                            <li>System Engineer for Philips Professional Healthcare (Sleep and Respiratory Care products).</li>
+                            <li>Leads Product Verification and DHF remediation for critical medical devices (e.g., Philips V60 Ventilator).</li>
+                            <li>Conducts System Architecture Studies (Design Control V-Model) translating user needs to product/part requirements.</li>
+                            <li>Manages Airpath Part Identification (Bio-Compatibility reports) and Documents Scrubbing (PRD, SRD, ERD, etc.).</li>
+                            <li>Develops Part Requirements (boundary/safety conditions) for PRD integration and performs Part DFMEA.</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="bg-white p-6 rounded-lg shadow">
+                     <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-xl font-semibold text-indigo-700 mb-1">Lead Mechanical Engineer</h3>
+                        <p class="text-md text-slate-500 mb-1">HCL Tech Ltd. (Client: Becton Dickinson) | Coimbatore, INDIA</p>
+                        <p class="text-sm text-slate-400 mb-3">Dec 2017 – Jul 2022</p>
+                        <ul class="list-disc list-outside ml-5 space-y-1 text-slate-600 text-sm">
+                            <li>Project Lead & R&D Lead for Sustenance Product Development (Medication Delivery Solutions).</li>
+                            <li>Managed CAPA projects (e.g., SND Activation force, Plunger Pull Out Force) and Specification Harmonization (Stopper Leakage AQL).</li>
+                            <li>Generated/maintained DFMEA for Safety Glide Needles; coordinated DV Plans & Protocols.</li>
+                            <li>Developed test protocols, established mechanical testing for Hypodermics platforms, and updated engineering documents.</li>
+                            <li>Established/maintained Sustenance Engineering Documentation & DHF (Design Input/Output, V&V, Review, Transfer).</li>
+                            <li>Ensured design control, drawing preparation/release (CAD integration with SAP PLM), adhering to ISO 13485, ISO 14971, IEC 60601/62304.</li>
+                            <li>Managed technical documentation (buy/product/test/component/package specs, quality docs).</li>
+                            <li>Participated in EU MDR remediation (GSPR, technical documentation, classification rules) and label remediation projects.</li>
+                            <li>Utilized Evolve SharePoint for DHF storage; executed product improvements via Reverse Engineering.</li>
+                            <li>Served as Engineering Change Coordinator (Pharmaceutical Systems); led sustenance project teams; designed products using Creo/SolidWorks.</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="bg-white p-6 rounded-lg shadow">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-xl font-semibold text-indigo-700 mb-1">Mechanical Engineer R&D</h3>
+                        <p class="text-md text-slate-500 mb-1">L.G.Balakrishnan and Bros Ltd. | Coimbatore, INDIA</p>
+                        <p class="text-sm text-slate-400 mb-3">Oct 2013 – Dec 2017</p>
+                        <ul class="list-disc list-outside ml-5 space-y-1 text-slate-600 text-sm">
+                            <li>Contributed to Product Design, Development, Validation & Testing in a Tier 1 Automotive Supplier.</li>
+                            <li>Responsibilities: technical data analysis, chain drive selection, design calculations, 2D/3D modeling, timing system layout, test development, design changes, project execution, dynamic simulation, NPD.</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="projects" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-semibold text-slate-800 mb-8 section-title">Key Projects</h2>
+            <p class="text-slate-600 mb-6">A selection of significant projects demonstrating expertise and impact.</p>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow">
+                    <h3 class="text-lg font-semibold text-indigo-600 mb-2">Philips V60 Ventilator Product Verification & DHF Remediation</h3>
+                    <p class="text-sm text-slate-500 mb-2">Duration: 881 Days</p>
+                    <p class="text-sm text-slate-600"><strong>Activities:</strong> System Architecture Study, Airpath Part ID, Document Scrubbing, Part Requirement Creation, DFMEA.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow">
+                    <h3 class="text-lg font-semibold text-indigo-600 mb-2">CAPA - SND Activation Force for Solomed/Emerald Syringes</h3>
+                    <p class="text-sm text-slate-500 mb-2">Duration: 243 Days</p>
+                    <p class="text-sm text-slate-600"><strong>Objective:</strong> Establish validated SND activation force specifications.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow">
+                    <h3 class="text-lg font-semibold text-indigo-600 mb-2">Stopper Leakage AQL Harmonization for Hypodermic Syringes</h3>
+                    <p class="text-sm text-slate-500 mb-2">Duration: 122 Days</p>
+                    <p class="text-sm text-slate-600"><strong>Objective:</strong> Standardize stopper leakage AQL specifications.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow">
+                    <h3 class="text-lg font-semibold text-indigo-600 mb-2">CAPA - Plunger Pull Out Force for 3ml Safety Glide Syringes</h3>
+                    <p class="text-sm text-slate-500 mb-2">Duration: 153 Days</p>
+                    <p class="text-sm text-slate-600"><strong>Objective:</strong> Define/implement revised plunger pull-out force specifications.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-semibold text-slate-800 mb-8 section-title">Education & Certifications</h2>
+            <p class="text-slate-600 mb-6">Academic qualifications and professional certifications.</p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-indigo-700 mb-3">Education</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <p class="font-medium text-slate-700">B.E. Mechanical Engineering</p>
+                            <p class="text-sm text-slate-500">KPR Institute of Engineering & Technology, Coimbatore | 2013</p>
+                            <p class="text-sm text-slate-500">CGPA: 7.54/10</p>
+                        </li>
+                        <li>
+                            <p class="font-medium text-slate-700">HSC (12th Grade)</p>
+                            <p class="text-sm text-slate-500">Tamil Nadu State Board | 2009 | 80-84.9%</p>
+                        </li>
+                        <li>
+                            <p class="font-medium text-slate-700">SSLC (10th Grade)</p>
+                            <p class="text-sm text-slate-500">Tamil Nadu State Board | 2007 | 75-79.9%</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-indigo-700 mb-3">Certifications</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <p class="font-medium text-slate-700">Creo Parametric 2.0</p>
+                        </li>
+                    </ul>
+                     <h3 class="text-xl font-semibold text-indigo-700 mt-6 mb-3">Languages</h3>
+                     <ul class="space-y-2">
+                        <li>
+                            <p class="font-medium text-slate-700">English (Fluent)</p>
+                        </li>
+                        <li>
+                            <p class="font-medium text-slate-700">Tamil (Native)</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-semibold text-slate-800 mb-6 section-title">Get In Touch</h2>
+            <div class="bg-white p-6 rounded-lg shadow text-center">
+                <p class="text-slate-600 mb-4">Interested in connecting? Here's how to reach out:</p>
+                <div class="contact-info text-indigo-600 space-y-2 sm:space-y-0 sm:space-x-6">
+                    <span class="inline-block hover:text-indigo-800">&#9993; <a href="mailto:Iwaran2391@gmail.com">Iwaran2391@gmail.com</a></span>
+                    <span class="inline-block hover:text-indigo-800">&#128222; +91-9790274495</span>
+                    <span class="inline-block hover:text-indigo-800">&#128279; <a href="https://www.linkedin.com/in/lingeshwaran-k-a64724b8/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></span>
+                </div>
+            </div>
+        </section>
+        
+        <div class="text-center mt-12 text-sm text-slate-500">
+            <p><em>This resume covers many common requirements. For targeted applications, explicitly add experience with MATLAB/MBD, Minitab, or dedicated MBSE tools/DOORS/JAMA if applicable, as these were noted in specific JDs but not detailed in the source profile.</em></p>
+        </div>
+
+    </main>
+
+    <footer class="bg-slate-800 text-slate-300 py-8 text-center">
+        <p>&copy; <span id="currentYear"></span> Lingeshwaran K. All rights reserved.</p>
+        <p class="text-xs">Interactive profile designed to showcase professional experience.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Active navigation link highlighting based on scroll position
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('header nav ul li a, #mobile-menu ul li a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                // Adjust for sticky header height (approx 4rem or 64px) + some buffer
+                if (pageYOffset >= sectionTop - 80) { 
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
